@@ -1,0 +1,399 @@
+<!--
+  Modern, modüler kişisel portföy sitesi
+  Yazan: Mehmet Başgöze
+  Açıklama: Sadece HTML, CSS, JS ile responsive, animasyonlu, profesyonel portföy
+-->
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mehmet Başgöze Kişisel Portföy</title>
+    <!-- Google Fonts: Poppins & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="icons/favicon.png" />
+</head>
+
+<body>
+    <!-- Giriş Ekranı (Hero) -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-anim">
+            <!-- Kod temalı SVG animasyon -->
+            <svg class="hero-svg-bg" width="100%" height="100%" viewBox="0 0 1440 800" fill="none"
+                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <g class="code-lines">
+                    <rect x="200" y="120" width="320" height="12" rx="6" fill="#2563eb" opacity="0.13">
+                        <animate attributeName="x" values="200;400;200" dur="4s" repeatCount="indefinite" />
+                    </rect>
+                    <rect x="400" y="180" width="180" height="12" rx="6" fill="#f97316" opacity="0.13">
+                        <animate attributeName="x" values="400;700;400" dur="5s" repeatCount="indefinite" />
+                    </rect>
+                    <rect x="900" y="300" width="260" height="12" rx="6" fill="#22d3ee" opacity="0.13">
+                        <animate attributeName="x" values="900;1200;900" dur="6s" repeatCount="indefinite" />
+                    </rect>
+                    <rect x="600" y="500" width="320" height="12" rx="6" fill="#22c55e" opacity="0.13">
+                        <animate attributeName="x" values="600;900;600" dur="4.5s" repeatCount="indefinite" />
+                    </rect>
+                    <rect x="300" y="650" width="180" height="12" rx="6" fill="#facc15" opacity="0.13">
+                        <animate attributeName="x" values="300;600;300" dur="5.5s" repeatCount="indefinite" />
+                    </rect>
+                </g>
+                <g class="code-symbols">
+                    <text x="1200" y="200" font-size="48" fill="#2563eb" opacity="0.18">
+                        AI
+                        <animate attributeName="y" values="200;300;200" dur="4.5s" repeatCount="indefinite" />
+                    </text>
+                    <text x="200" y="700" font-size="38" fill="#f97316" opacity="0.18">
+                        ML
+                        <animate attributeName="y" values="700;600;700" dur="5s" repeatCount="indefinite" />
+                    </text>
+                    <text x="900" y="100" font-size="38" fill="#22d3ee" opacity="0.18">
+                        neural
+                        <animate attributeName="y" values="100;200;100" dur="6s" repeatCount="indefinite" />
+                    </text>
+                    <text x="400" y="400" font-size="32" fill="#22c55e" opacity="0.16">
+                        0101
+                        <animate attributeName="y" values="400;500;400" dur="5.2s" repeatCount="indefinite" />
+                    </text>
+                    <text x="700" y="600" font-size="38" fill="#facc15" opacity="0.16">
+                        brain
+                        <animate attributeName="y" values="600;700;600" dur="5.8s" repeatCount="indefinite" />
+                    </text>
+                    <text x="1100" y="350" font-size="32" fill="#0ea5e9" opacity="0.13">
+                        data
+                        <animate attributeName="y" values="350;450;350" dur="4.7s" repeatCount="indefinite" />
+                    </text>
+                </g>
+            </svg>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Mehmet Başgöze</h1>
+            <p class="hero-subtitle">Yapay zeka ile geleceği şekillendiren, veri odaklı çözümlerin tutkulu mimarı!</p>
+            <div class="scroll-down">
+                <span>Keşfet</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loader -->
+    <div id="loader" class="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Scroll To Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Yukarı Çık">
+        ↑
+    </button>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">Mehmet Başgöze</div>
+            <ul class="nav-links">
+                <li><a href="#about">Hakkımda</a></li>
+                <li><a href="#education">Eğitim</a></li>
+                <li><a href="#experience">Deneyim</a></li>
+                <li><a href="#technologies">Teknolojiler</a></li>
+                <li><a href="#projects">Projeler</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hakkımda Bölümü -->
+        <section id="about" class="section about-section">
+            <div class="about-content">
+                <div class="about-photo-wrapper">
+                    <img src="images/profile.jpg" alt="Mehmet Başgöze" class="about-photo" />
+                </div>
+                <div class="about-text">
+                    <h1>Merhaba!</h1>
+                    <p>Merhaba, ben Mehmet Başgöze. Fırat Üniversitesi Yazılım Mühendisliği mezunuyum. Yapay zeka,
+                        makine öğrenmesi ve veri bilimi alanlarında uzmanlaşmak için çabalayan bir mühendisim.
+                        Bilgisayarlı görme,
+                        veri analizi ve tahmine dayalı modelleme üzerine geliştirdiğim projelerle, endüstriyel
+                        verilerden anlam çıkaran gerçek zamanlı yapay zeka sistemleri tasarlıyorum. Öncü şirketlerde
+                        yapay zeka modelleri, web uygulamaları ve makine öğrenmesi projelerinde deneyim kazandım.
+                        <br>
+                        <br>
+                        Yapay Zeka Geliştiricisi olarak, özellikle LSTM ve GRU-LSTM tabanlı algoritmalarla enerji talebi
+                        öngörü modelleri geliştirdim. Gerçek zamanlı enerji tüketimi verileriyle çalışan sistemler
+                        tasarlayarak, veri odaklı çözümlerle işletmelerin verimliliğini artırmaya katkıda bulundum.
+                        Python, TensorFlow, PyTorch ve OpenCV gibi teknolojilere hakimim ve veri setleri ile
+                        veritabanları üzerinde kapsamlı çalışmalar gerçekleştirdim.
+                        <br>
+                        <br>
+                        Akıllı sistemler tasarlamaya olan tutkum, problem çözme becerilerim ve teknik uzmanlığım ile
+                        projelere yenilikçi yaklaşımlar sunuyorum. Tecrübelerimi paylaşmak ve danışmanlık ile yönetim
+                        alanlarında yetkinliklerimi derinleştirmek için sürekli öğrenmeye ve kendimi geliştirmeye devam
+                        ediyorum.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eğitim Bölümü -->
+        <section id="education" class="section education-section">
+            <h2>Eğitim</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Fırat Üniversitesi</h3>
+                    <p>Yazılım Mühendisliği</p>
+                    <span>2021 - 2025</span>
+                </div>
+
+        </section>
+
+        <!-- Deneyim Bölümü -->
+        <section id="education" class="section education-section">
+            <h2>Deneyim</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3 style="color: #60cced;">Craft Technology</h3>
+                    <span class="exp-role">Yazılım Geliştirici</span>
+                    <span class="exp-year">• Yarı zamanlı</span>
+                    <span class="exp-year">Temmuz 2025 - Devam</span>
+                </div>
+                <div class="experience-card">
+                    <h3 style="color: #60cced;">FlexyWatt</h3>
+                    <span class="exp-role">Artificial Intelligence Developer</span>
+                    <span class="exp-year">• Yarı zamanlı</span>
+                    <span class="exp-year">Şubat 2025 - Halen</span>
+                </div>
+                <div class="experience-card">
+                    <h3 style="color: #60cced;">FlexyWatt</h3>
+                    <span class="exp-role">Artificial Intelligence Developer Intern</span>
+                    <span class="exp-year">• Stajyer</span>
+                    <span class="exp-year">Ekim 2024 - Şubat 2025</span>
+                    <br>
+                    <p>Gerçek zamanlı enerji tüketimi verileriyle çalışan tahmin modelleri geliştirdim.</p>
+                    <p>LSTM ve GRU-LSTM tabanlı yapılarla enerji talebini öngören algoritmalar tasarladım.</p>
+                    <p>TÜBİTAK-1501 projesi için enerji tahmin süreçlerini iyileştiren çalışmalarda yer aldım.</p>
+                </div>
+                <div class="experience-card">
+                    <h3 style="color: #60cced;">Türk Telekom</h3>
+                    <span class="exp-role">Software Engineer Intern</span>
+                    <span class="exp-year">• Stajyer</span>
+                    <span class="exp-year">Eylül 2024 - Ekim 2024</span>
+                    <br>
+                    <p>Ağ ve sunucu yönetimini gözlemledim.</p>
+                    <p>Yapay zeka destekli Arıza Tahmin Sistemi geliştirdim. </p>
+                    <p>Tasarımcılar için Renk Tanıma Web Uygulaması geliştirdim.</p>
+                </div>
+                <div class="experience-card">
+                    <h3 style="color: #60cced;">Hevi AI</h3>
+                    <span class="exp-role">Test Automation Intern</span>
+                    <span class="exp-year">• Stajyer</span>
+                    <span class="exp-year">Temmuz 2023 - Ağustos 2023</span>
+                    <br>
+                    <p>Web testlerini otomatikleştirdim.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teknolojiler Bölümü -->
+        <section id="technologies" class="section tech-section">
+            <h2>Teknolojiler</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <img src="icons/python.png" alt="Python" />
+                    <span>Python</span>
+                    <div class="donut-chart" data-percent="90">
+                        <svg width="72" height="72" viewBox="0 0 72 72">
+                            <circle class="donut-bg" cx="36" cy="36" r="32" />
+                            <circle class="donut-bar" cx="36" cy="36" r="32" />
+                        </svg>
+                        <div class="donut-label">90%</div>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <img src="icons/keras.png" alt="Keras" />
+                    <span>Keras</span>
+                    <div class="donut-chart" data-percent="85">
+                        <svg width="72" height="72" viewBox="0 0 72 72">
+                            <circle class="donut-bg" cx="36" cy="36" r="32" />
+                            <circle class="donut-bar" cx="36" cy="36" r="32" />
+                        </svg>
+                        <div class="donut-label">80%</div>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <img src="icons/tensorflow.png" alt="TensorFlow" />
+                    <span>TensorFlow</span>
+                    <div class="donut-chart" data-percent="70">
+                        <svg width="72" height="72" viewBox="0 0 72 72">
+                            <circle class="donut-bg" cx="36" cy="36" r="32" />
+                            <circle class="donut-bar" cx="36" cy="36" r="32" />
+                        </svg>
+                        <div class="donut-label">70%</div>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <img src="icons/pandas.png" alt="Pandas" />
+                    <span>Pandas</span>
+                    <div class="donut-chart" data-percent="75">
+                        <svg width="72" height="72" viewBox="0 0 72 72">
+                            <circle class="donut-bg" cx="36" cy="36" r="32" />
+                            <circle class="donut-bar" cx="36" cy="36" r="32" />
+                        </svg>
+                        <div class="donut-label">75%</div>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <img src="icons/scikit-learn.png" alt="Scikit-learn" />
+                    <span>Scikit-learn</span>
+                    <div class="donut-chart" data-percent="60">
+                        <svg width="72" height="72" viewBox="0 0 72 72">
+                            <circle class="donut-bg" cx="36" cy="36" r="32" />
+                            <circle class="donut-bar" cx="36" cy="36" r="32" />
+                        </svg>
+                        <div class="donut-label">60%</div>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <img src="icons/flutter.png" alt="Flutter" />
+                    <span>Flutter</span>
+                    <div class="donut-chart" data-percent="50">
+                        <svg width="72" height="72" viewBox="0 0 72 72">
+                            <circle class="donut-bg" cx="36" cy="36" r="32" />
+                            <circle class="donut-bar" cx="36" cy="36" r="32" />
+                        </svg>
+                        <div class="donut-label">50%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projeler Bölümü -->
+        <section id="projects" class="section projects-section">
+            <h2>Projeler</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-project="1">
+                    <h3>Yapay Zeka Destekli Meme Kanseri Tespit Sistemi</h3>
+                    <br>
+                    <p>Meme kanseri teşhisinde yapay zeka destekli analiz ve segmentasyon sunan, modern ve kullanıcı
+                        dostu bir web uygulamasıdır.</p>
+                    <br>
+                    <a class="project-detail-btn" href="detail1.html">Detay</a>
+                </div>
+                <div class="project-card" data-project="2">
+                    <h3>Hava Durumu App</h3>
+                    <p>Gerçek zamanlı hava durumu verisi sunan, responsive ve animasyonlu bir uygulama.</p>
+                    <br>
+                    <a class="project-detail-btn" href="detail2.html">Detay</a>
+                </div>
+                <div class="project-card" data-project="3">
+                    <h3>Portfolio Web</h3>
+                    <p>Kişisel portföyünüzü sergileyebileceğiniz, özelleştirilebilir ve hızlı bir web sitesi.</p>
+                    <br>
+                    <a class="project-detail-btn" href="detail3.html">Detay</a>
+                </div>
+            </div>
+            <!-- Proje Detay Modalı -->
+
+        </section>
+
+        <!-- Başarılar Bölümü -->
+        <section id="achievements" class="section achievements-section">
+            <h2>Başarılar / Sertifikalar</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-img-wrapper">
+                        <img src="images/certificates/gorsel1.jpg" alt="Görsel" class="achievement-img" />
+                    </div>
+                    <h3>TEKNOFEST AKDENİZ 2024 Finalisti</h3>
+                    <p>Teknofest Akdeniz 2024 kapsamında sosyal inovasyon yarışması kategorisinde takımımızla birlikte
+                        finalist olma başarısı gösterdik.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-img-wrapper">
+                        <img src="images/certificates/gorsel2.png" alt="Sertifika 1" class="achievement-img" />
+                    </div>
+                    <h3>Halkbank Low Code Academy</h3>
+                    <p>Halkbank tarafından düzenlenen Low Code Academy kapsamında tüm eğitimleri başarılı bir şekilde
+                        tamamladım.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-img-wrapper">
+                        <img src="images/certificates/gorsel3.png" alt="Sertifika 2" class="achievement-img" />
+                    </div>
+                    <h3>İnsansız Hava Araçları Eğitimi</h3>
+                    <p>BTK Akademi tarafından düzenlenen İnsansız Hava Araçları eğitimini başarılı bir şekilde
+                        tamamladım.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Sertifika Tam Ekran Modalı -->
+        <div id="certificate-modal" class="certificate-modal">
+            <span class="certificate-modal-close">&times;</span>
+            <img class="certificate-modal-img" src="" alt="Sertifika Büyütülmüş" />
+        </div>
+
+        <!-- Sosyal Medya Bölümü -->
+        <section id="social" class="section social-section">
+            <h2>Sosyal Medya</h2>
+            <div class="social-grid">
+                <a href="https://linkedin.com/in/mehmetbasgoze" target="_blank" class="social-card"
+                    aria-label="LinkedIn">
+                    <img src="images/social/linkedin.png" alt="LinkedIn" />
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/mehmetbasgoze" target="_blank" class="social-card" aria-label="GitHub">
+                    <img src="images/social/github.png" alt="GitHub" />
+                    <span>GitHub</span>
+                </a>
+                <a href="https://kaggle.com/mehmetbasgoze" target="_blank" class="social-card" aria-label="Kaggle">
+                    <img src="images/social/kaggle.png" alt="Kaggle" />
+                    <span>Kaggle</span>
+                </a>
+                <a href="mailto:mehmetbasgoze@gmail.com" class="social-card" aria-label="Email">
+                    <img src="images/social/email.png" alt="Email" />
+                    <span>Email</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- İletişim Bölümü -->
+        <section id="contact" class="section contact-section">
+            <h2>İletişim</h2>
+            <form id="contactForm" class="contact-form" autocomplete="off">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required placeholder="Adınız" />
+                    <span class="form-icon"><svg width="20" height="20" fill="none">
+                            <path d="M2 2h16v16H2V2z" stroke="#38bdf8" />
+                        </svg></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder="E-posta" />
+                    <span class="form-icon"><svg width="20" height="20" fill="none">
+                            <circle cx="10" cy="10" r="8" stroke="#38bdf8" />
+                        </svg></span>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" required placeholder="Mesajınız"></textarea>
+                    <span class="form-icon"><svg width="20" height="20" fill="none">
+                            <rect x="2" y="2" width="16" height="16" stroke="#38bdf8" />
+                        </svg></span>
+                </div>
+                <button type="submit" class="send-btn">Gönder</button>
+                <div id="form-message" class="form-message"></div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <span>© 2025 Designed by Mehmet Başgöze</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
