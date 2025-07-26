@@ -1269,6 +1269,11 @@ body {
     opacity: 0.92;
 }
 
+/* Deneyim bölümündeki ok işaretlerini kalınlaştır */
+.experience-card p span {
+    font-weight: bold !important;
+}
+
 @media (max-width: 1024px) {
     .experience-section {
         padding-left: 1.5rem;
