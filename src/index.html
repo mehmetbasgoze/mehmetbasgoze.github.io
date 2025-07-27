@@ -89,18 +89,26 @@
         ↑
     </button>
 
-    <!-- Navbar -->
-    <nav class="navbar">
+    <!-- Modern Navbar -->
+    <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <div class="logo">Mehmet Başgöze</div>
-            <ul class="nav-links">
-                <li><a href="#about">Hakkımda</a></li>
-                <li><a href="#education">Eğitim</a></li>
-                <li><a href="#experience">Deneyim</a></li>
-                <li><a href="#technologies">Teknolojiler</a></li>
-                <li><a href="#projects">Projeler</a></li>
-                <li><a href="#contact">İletişim</a></li>
+            <div class="logo">
+                <img src="../public/icons/favicon.png" alt="Mehmet Başgöze Logo" />
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" class="nav-link">Hakkımda</a></li>
+                <li><a href="#education" class="nav-link">Eğitim</a></li>
+                <li><a href="#experience" class="nav-link">Deneyim</a></li>
+                <li><a href="#technologies" class="nav-link">Teknolojiler</a></li>
+                <li><a href="#projects" class="nav-link">Projeler</a></li>
+                <li><a href="#achievements" class="nav-link">Başarılar</a></li>
+                <li><a href="#contact" class="nav-link">İletişim</a></li>
             </ul>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -150,7 +158,7 @@
         </section>
 
         <!-- Deneyim Bölümü -->
-        <section id="education" class="section education-section">
+        <section id="experience" class="section education-section">
             <h2>Deneyim</h2>
             <div class="experience-grid">
                 <div class="experience-card">
@@ -265,6 +273,17 @@
                             <circle class="donut-bar" cx="36" cy="36" r="32" />
                         </svg>
                         <div class="donut-label">60%</div>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <img src="../public/icons/java.png" alt="Java" />
+                    <span>Java</span>
+                    <div class="donut-chart" data-percent="55">
+                        <svg width="72" height="72" viewBox="0 0 72 72">
+                            <circle class="donut-bg" cx="36" cy="36" r="32" />
+                            <circle class="donut-bar" cx="36" cy="36" r="32" />
+                        </svg>
+                        <div class="donut-label">55%</div>
                     </div>
                 </div>
                 <div class="tech-card">
