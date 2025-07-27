@@ -4,38 +4,44 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Loader
     const loader = document.getElementById('loader');
-    setTimeout(() => {
-        loader.style.opacity = '0';
-        setTimeout(() => loader.style.display = 'none', 400);
-    }, 900);
+    if (loader) {
+        setTimeout(() => {
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 400);
+        }, 900);
+    }
 
     // Custom Cursor
     const cursor = document.getElementById('custom-cursor');
-    let cursorX = 0, cursorY = 0;
-    document.addEventListener('mousemove', e => {
-        cursorX = e.clientX;
-        cursorY = e.clientY;
-        cursor.style.transform = `translate3d(${cursorX - 16}px, ${cursorY - 16}px, 0)`;
-    });
-    // Cursor büyütme hover
-    const hoverables = document.querySelectorAll('button, a, .about-photo-wrapper, .project-card, .tech-card, .education-card');
-    hoverables.forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
-    });
+    if (cursor) {
+        let cursorX = 0, cursorY = 0;
+        document.addEventListener('mousemove', e => {
+            cursorX = e.clientX;
+            cursorY = e.clientY;
+            cursor.style.transform = `translate3d(${cursorX - 16}px, ${cursorY - 16}px, 0)`;
+        });
+        // Cursor büyütme hover
+        const hoverables = document.querySelectorAll('button, a, .about-photo-wrapper, .project-card, .tech-card, .education-card');
+        hoverables.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+        });
+    }
 
     // Scroll To Top
     const scrollBtn = document.getElementById('scrollToTop');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-            scrollBtn.classList.add('show');
-        } else {
-            scrollBtn.classList.remove('show');
-        }
-    });
-    scrollBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    if (scrollBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
     // Modern Navbar Functionality
     const navbar = document.getElementById('navbar');
@@ -44,16 +50,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinksItems = document.querySelectorAll('.nav-link');
 
     // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
 
     // Mobile menu toggle
-    if (mobileMenuBtn) {
+    if (mobileMenuBtn && navLinks) {
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenuBtn.classList.toggle('active');
             navLinks.classList.toggle('active');
@@ -62,63 +70,69 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Close mobile menu when clicking on a link
-    navLinksItems.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
+    if (navLinks && mobileMenuBtn) {
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    mobileMenuBtn.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    }
+
+    // Close mobile menu when clicking outside
+    if (navbar && navLinks && mobileMenuBtn) {
+        document.addEventListener('click', (e) => {
+            if (!navbar.contains(e.target) && navLinks.classList.contains('active')) {
                 mobileMenuBtn.classList.remove('active');
                 navLinks.classList.remove('active');
                 document.body.style.overflow = '';
             }
         });
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!navbar.contains(e.target) && navLinks.classList.contains('active')) {
-            mobileMenuBtn.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
+    }
 
     // Active link highlighting
-    const sections = document.querySelectorAll('section[id]');
-    const observerOptions = {
-        threshold: 0.3,
-        rootMargin: '-80px 0px -80px 0px'
-    };
+    if (navLinks && navLinksItems.length > 0) {
+        const sections = document.querySelectorAll('section[id]');
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '-80px 0px -80px 0px'
+        };
 
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const id = entry.target.getAttribute('id');
-            const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
 
-            if (entry.isIntersecting) {
-                navLinksItems.forEach(link => link.classList.remove('active'));
-                if (navLink) navLink.classList.add('active');
-            }
+                if (entry.isIntersecting) {
+                    navLinksItems.forEach(link => link.classList.remove('active'));
+                    if (navLink) navLink.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
         });
-    }, observerOptions);
 
-    sections.forEach(section => {
-        sectionObserver.observe(section);
-    });
-
-    // Smooth scroll for navigation links
-    navLinksItems.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').split('#')[1];
-            const target = document.getElementById(targetId);
-            if (target) {
-                const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
+        // Smooth scroll for navigation links
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').split('#')[1];
+                const target = document.getElementById(targetId);
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
-    });
+    }
 
     // Hero scroll-down tıklama ve scroll
     const heroSection = document.getElementById('hero');
@@ -157,32 +171,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // İletişim Formu
     const contactForm = document.getElementById('contactForm');
-    const formMessage = document.getElementById('form-message');
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const name = contactForm.name.value.trim();
-        const email = contactForm.email.value.trim();
-        const message = contactForm.message.value.trim();
-        if (name && email && message) {
-            formMessage.textContent = 'Mesajınız gönderildi!';
-            formMessage.style.color = '#facc15';
-            contactForm.reset();
-            setTimeout(() => formMessage.textContent = '', 3000);
-        } else {
-            formMessage.textContent = 'Lütfen tüm alanları doldurun.';
-            formMessage.style.color = '#f87171';
-        }
-    });
+    if (contactForm) {
+        const formMessage = document.getElementById('form-message');
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = contactForm.name.value.trim();
+            const email = contactForm.email.value.trim();
+            const message = contactForm.message.value.trim();
+            if (name && email && message) {
+                formMessage.textContent = 'Mesajınız gönderildi!';
+                formMessage.style.color = '#facc15';
+                contactForm.reset();
+                setTimeout(() => formMessage.textContent = '', 3000);
+            } else {
+                formMessage.textContent = 'Lütfen tüm alanları doldurun.';
+                formMessage.style.color = '#f87171';
+            }
+        });
 
-    // Placeholder animasyonu
-    document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(input => {
-        input.addEventListener('focus', function () {
-            this.parentNode.classList.add('focused');
+        // Placeholder animasyonu
+        document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(input => {
+            input.addEventListener('focus', function () {
+                this.parentNode.classList.add('focused');
+            });
+            input.addEventListener('blur', function () {
+                if (!this.value) this.parentNode.classList.remove('focused');
+            });
         });
-        input.addEventListener('blur', function () {
-            if (!this.value) this.parentNode.classList.remove('focused');
-        });
-    });
+    }
 
     // Donut Chart Animasyonu (Teknolojiler)
     document.querySelectorAll('.donut-chart').forEach(chart => {
@@ -200,25 +216,111 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Sertifika Tam Ekran Modalı
     const certModal = document.getElementById('certificate-modal');
-    const certModalImg = document.querySelector('.certificate-modal-img');
-    const certModalClose = document.querySelector('.certificate-modal-close');
-    document.querySelectorAll('.achievement-img').forEach(img => {
-        img.addEventListener('click', function () {
-            certModalImg.src = this.src;
-            certModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+    if (certModal) {
+        const certModalImg = document.querySelector('.certificate-modal-img');
+        const certModalClose = document.querySelector('.certificate-modal-close');
+        document.querySelectorAll('.achievement-img').forEach(img => {
+            img.addEventListener('click', function () {
+                certModalImg.src = this.src;
+                certModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
         });
-    });
-    certModalClose.addEventListener('click', function () {
-        certModal.classList.remove('active');
-        certModalImg.src = '';
-        document.body.style.overflow = '';
-    });
-    certModal.addEventListener('click', function (e) {
-        if (e.target === certModal) {
+        certModalClose.addEventListener('click', function () {
             certModal.classList.remove('active');
             certModalImg.src = '';
             document.body.style.overflow = '';
+        });
+        certModal.addEventListener('click', function (e) {
+            if (e.target === certModal) {
+                certModal.classList.remove('active');
+                certModalImg.src = '';
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Simple Image Modal Functionality
+    console.log('Setting up image modal...'); // Debug log
+
+    // Get modal elements
+    const imageModal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const closeModal = document.querySelector('.close-modal');
+
+    console.log('Modal elements:', { imageModal, modalImage, modalCaption, closeModal }); // Debug log
+
+    // Get all gallery images
+    const galleryImages = document.querySelectorAll('.gallery-image');
+    console.log('Found gallery images:', galleryImages.length); // Debug log
+
+    // Add click event to each gallery image
+    galleryImages.forEach((img, index) => {
+        console.log(`Adding click listener to image ${index}:`, img); // Debug log
+
+        img.onclick = function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log(`Image ${index} clicked!`); // Debug log
+
+            // Get image data
+            const src = img.getAttribute('data-src') || img.src;
+            const caption = img.getAttribute('data-caption') || img.alt;
+            const alt = img.alt;
+
+            console.log('Image data:', { src, caption, alt }); // Debug log
+
+            // Set modal content
+            if (modalImage) modalImage.src = src;
+            if (modalImage) modalImage.alt = alt;
+            if (modalCaption) modalCaption.textContent = caption;
+
+            // Show modal
+            if (imageModal) {
+                imageModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                console.log('Modal should be visible now'); // Debug log
+            }
+        };
+    });
+
+    // Close modal functionality
+    if (closeModal) {
+        closeModal.onclick = function () {
+            console.log('Close button clicked'); // Debug log
+            if (imageModal) {
+                imageModal.classList.remove('active');
+                document.body.style.overflow = '';
+                if (modalImage) modalImage.src = '';
+                if (modalCaption) modalCaption.textContent = '';
+            }
+        };
+    }
+
+    // Close modal when clicking outside
+    if (imageModal) {
+        imageModal.onclick = function (e) {
+            if (e.target === imageModal) {
+                console.log('Clicked outside modal'); // Debug log
+                imageModal.classList.remove('active');
+                document.body.style.overflow = '';
+                if (modalImage) modalImage.src = '';
+                if (modalCaption) modalCaption.textContent = '';
+            }
+        };
+    }
+
+    // Keyboard support
+    document.addEventListener('keydown', function (e) {
+        if (imageModal && imageModal.classList.contains('active')) {
+            if (e.key === 'Escape') {
+                console.log('Escape key pressed'); // Debug log
+                imageModal.classList.remove('active');
+                document.body.style.overflow = '';
+                if (modalImage) modalImage.src = '';
+                if (modalCaption) modalCaption.textContent = '';
+            }
         }
     });
 }); 

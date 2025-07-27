@@ -56,17 +56,18 @@
                 <div class="project-gallery-grid">
                     <div class="gallery-item">
                         <div class="gallery-frame">
-                            <img src="../public/images/projects/result.png" alt="Ana Ekran Görünümü"
-                                class="gallery-image" />
+                            <img src="../public/images/projects/upload.png" alt="Mamografi Yükleme Modülü"
+                                class="gallery-image" data-src="../public/images/projects/upload.png"
+                                data-caption="Mamografi Yükleme Modülü" />
                             <div class="gallery-overlay">
-                                <span class="gallery-caption">Ana Ekran Görünümü</span>
+                                <span class="gallery-caption">Mamografi Yükleme Modülü</span>
                             </div>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-frame">
-                            <img src="../public/images/projects/result.png" alt="Analiz Sonuçları"
-                                class="gallery-image" />
+                            <img src="../public/images/projects/result.png" alt="Analiz Sonuçları" class="gallery-image"
+                                data-src="../public/images/projects/result.png" data-caption="Analiz Sonuçları" />
                             <div class="gallery-overlay">
                                 <span class="gallery-caption">Analiz Sonuçları</span>
                             </div>
@@ -74,19 +75,31 @@
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-frame">
-                            <img src="../public/images/projects/result.png" alt="Segmentasyon Görünümü"
-                                class="gallery-image" />
+                            <img src="../public/images/projects/kanserTurleri.png" alt="Kanser Türleri"
+                                class="gallery-image" data-src="../public/images/projects/kanserTurleri.png"
+                                data-caption="Kanser Türleri" />
                             <div class="gallery-overlay">
-                                <span class="gallery-caption">Segmentasyon Görünümü</span>
+                                <span class="gallery-caption">Kanser Türleri</span>
                             </div>
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-frame">
-                            <img src="../public/images/projects/result.png" alt="Mobil Uygulama"
-                                class="gallery-image" />
+                            <img src="../public/images/projects/beslenmeOnerileri.png" alt="Beslenme Önerileri"
+                                class="gallery-image" data-src="../public/images/projects/beslenmeOnerileri.png"
+                                data-caption="Beslenme Önerileri" />
                             <div class="gallery-overlay">
-                                <span class="gallery-caption">Mobil Uygulama</span>
+                                <span class="gallery-caption">Beslenme Önerileri</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-frame">
+                            <img src="../public/images/projects/ornekModelCiktilari.png" alt="Örnek Model Çıktıları"
+                                class="gallery-image" data-src="../public/images/projects/ornekModelCiktilari.png"
+                                data-caption="Örnek Model Çıktıları" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-caption">Örnek Model Çıktıları</span>
                             </div>
                         </div>
                     </div>
@@ -185,6 +198,47 @@
                     </div>
                 </div>
 
+                <!-- Yeni Başlıklar -->
+                <div class="project-details-grid">
+                    <!-- Temel Amaçlar -->
+                    <div class="project-detail-card">
+                        <h3>🎯 Temel Amaçlar</h3>
+                        <ul class="feature-list">
+                            <li>Meme kanseri erken teşhisini kolaylaştırmak</li>
+                            <li>Doktorlara yardımcı olacak yapay zeka destekli analiz sistemi geliştirmek</li>
+                            <li>Yüksek doğruluk oranı ile güvenilir sonuçlar sunmak</li>
+                            <li>Kullanıcı dostu arayüz ile kolay erişim sağlamak</li>
+                            <li>Sağlık sektöründe yapay zeka teknolojilerinin kullanımını yaygınlaştırmak</li>
+                        </ul>
+                    </div>
+
+                    <!-- Temel Özellikler -->
+                    <div class="project-detail-card">
+                        <h3>📱 Temel Özellikler</h3>
+                        <ul class="feature-list">
+                            <li>Mamografi görüntülerini yükleme ve analiz etme</li>
+                            <li>Gerçek zamanlı kanser tespiti ve sınıflandırma</li>
+                            <li>Detaylı raporlama ve görselleştirme</li>
+                            <li>Kanser türlerine göre özelleştirilmiş beslenme önerileri</li>
+                            <li>Mobil uyumlu responsive tasarım</li>
+                            <li>Çoklu format desteği (PNG, JPG, DICOM)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Yapay Zeka Kullanımı -->
+                    <div class="project-detail-card">
+                        <h3>🧠 Yapay Zeka Kullanımı</h3>
+                        <ul class="feature-list">
+                            <li>Convolutional Neural Network (CNN) tabanlı derin öğrenme modeli</li>
+                            <li>Transfer learning ile önceden eğitilmiş modellerin kullanımı</li>
+                            <li>Görüntü segmentasyonu ve özellik çıkarma</li>
+                            <li>Makine öğrenmesi algoritmaları ile sınıflandırma</li>
+                            <li>Model performans optimizasyonu ve hiperparametre ayarlama</li>
+                            <li>Gerçek zamanlı tahmin ve sonuç analizi</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <!-- Proje Linkleri -->
                 <div class="project-links">
                     <a href="https://github.com/mehmetbasgoze/Breast-Cancer-Detection" class="project-link github-link"
@@ -199,6 +253,16 @@
             </div>
         </section>
     </main>
+
+    <!-- Fullscreen Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modalImage" class="modal-image" src="" alt="" />
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer-content">
             <span>© Designed by Mehmet Başgöze</span>
