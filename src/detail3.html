@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Web | Proje Detayı</title>
+    <title>Gerçek Zamanlı Nesne Tanıma Uygulaması | Proje Detayı</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
@@ -35,31 +35,204 @@
         </div>
     </nav>
     <main>
-        <section class="section projects-section">
-            <h2>Portfolio Web</h2>
-            <div class="project-detail-content">
-                <div class="project-detail-gallery">
-                    <img src="../public/images/projects/result.png" alt="Proje Fotoğrafı 1"
-                        class="project-detail-image" />
-                </div>
-                <div class="project-detail-info">
-                    <div class="project-detail-section">
-                        <h3>Proje Açıklaması</h3>
-                        <p>Bu alana proje ile ilgili detaylı açıklamanızı yazabilirsiniz. Kullanılan yöntemler, amaç ve
-                            öne çıkan özellikler burada yer alabilir.</p>
+        <!-- Proje Hero Bölümü -->
+        <section class="project-hero">
+            <div class="container">
+                <div class="project-hero-content">
+                    <h1 class="project-title">Gerçek Zamanlı Nesne Tanıma Uygulaması</h1>
+                    <p class="project-subtitle">Gerçek zamanlı görüntü işleme teknikleri kullanılarak geliştirilmiş,
+                        derin öğrenme tabanlı nesne tanıma sistemi</p>
+                    <div class="project-meta">
+                        <span class="project-category">Yapay Zeka & Görüntü İşleme</span>
                     </div>
-                    <div class="project-detail-section">
-                        <h3>Kullanılan Teknolojiler</h3>
-                        <ul class="project-detail-techs">
-                            <li>HTML5</li>
-                            <li>CSS3</li>
-                            <li>JavaScript</li>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proje Görselleri Bölümü -->
+        <section class="section project-gallery-section visible">
+            <div class="container">
+                <h2>Proje Görselleri</h2>
+                <div class="project-gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-frame">
+                            <img src="../public/images/projects/result.png" alt="Gerçek Zamanlı Tespit"
+                                class="gallery-image" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-caption">Gerçek Zamanlı Tespit</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-frame">
+                            <img src="../public/images/projects/result.png" alt="Nesne Sınıflandırma"
+                                class="gallery-image" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-caption">Nesne Sınıflandırma</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-frame">
+                            <img src="../public/images/projects/result.png" alt="Bounding Box Çizimi"
+                                class="gallery-image" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-caption">Bounding Box Çizimi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-frame">
+                            <img src="../public/images/projects/result.png" alt="Güven Skoru Gösterimi"
+                                class="gallery-image" />
+                            <div class="gallery-overlay">
+                                <span class="gallery-caption">Güven Skoru Gösterimi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proje Detayları Bölümü -->
+        <section class="section project-details-section visible">
+            <div class="container">
+                <h2>Proje Detayları</h2>
+                <div class="project-details-grid">
+                    <!-- Proje Açıklaması -->
+                    <div class="project-detail-card">
+                        <h3>📌 Proje Açıklaması</h3>
+                        <p>Bu proje, gerçek zamanlı görüntü işleme teknikleri kullanılarak geliştirilmiş, derin öğrenme
+                            tabanlı bir nesne tanıma sistemidir. Kamera görüntüsü üzerinden sahnede bulunan nesneleri
+                            anlık olarak tespit eder, sınıflandırır ve görsel çıktılarla birlikte kullanıcıya sunar.</p>
+                        <p>Yüksek doğruluk oranına sahip olan sistem, 82 farklı nesne sınıfını tanıyabilme yeteneğine
+                            sahiptir. YOLOv5 mimarisi kullanılarak geliştirilen sistem, gerçek zamanlı performans ile
+                            günlük uygulamalarda kullanılabilir hale getirilmiştir.</p>
+                    </div>
+
+                    <!-- Temel Amaçlar -->
+                    <div class="project-detail-card">
+                        <h3>🎯 Temel Amaçlar</h3>
+                        <ul class="feature-list">
+                            <li>✅ Gerçek zamanlı nesne tanıma yeteneği kazandırmak</li>
+                            <li>✅ Görüntü akışı üzerinde hızlı ve verimli sınıflandırma gerçekleştirmek</li>
+                            <li>✅ Derin öğrenme tabanlı modellerin günlük uygulamalara entegrasyonunu göstermek</li>
+                            <li>✅ Yapay zekâ ile görüntü işleme konularında deneyim kazanmak ve gösterilebilir bir demo
+                                ortaya koymak</li>
                         </ul>
                     </div>
-                    <div class="modal-links">
-                        <a href="#" target="_blank">GitHub</a>
-                        <a href="#" target="_blank">Canlı Demo</a>
+
+                    <!-- Temel Özellikler -->
+                    <div class="project-detail-card">
+                        <h3>⚙️ Temel Özellikler</h3>
+                        <ul class="feature-list">
+                            <li>✅ Gerçek zamanlı tespit: Video akışında anlık olarak nesne tanıma ve işaretleme</li>
+                            <li>✅ Yüksek sınıf çeşitliliği: 82 farklı nesne sınıfını tanıma (COCO dataset tabanlı)</li>
+                            <li>✅ Kullanıcı dostu arayüz: Kamera görüntüsü üzerinde sınıf adı ve güven skoru ile kutu
+                                çerçeveler</li>
+                            <li>✅ Modüler yapı: Kolayca başka veri setleri veya modeller ile değiştirilebilir yapı</li>
+                        </ul>
                     </div>
+
+                    <!-- Yapay Zeka Kullanımı -->
+                    <div class="project-detail-card">
+                        <h3>🤖 Yapay Zeka Kullanımı</h3>
+                        <p>Projede, nesne tespiti için YOLOv5 mimarisi kullanılmaktadır. YOLO (You Only Look Once),
+                            görüntüleri tek bir aşamada analiz ederek nesne sınıflarını ve konumlarını hızlı ve doğru
+                            bir şekilde belirler.</p>
+                        <p>Bu model, önceden eğitilmiş ağırlıklarla çalışmakta olup; sınıflandırma, bounding box tahmini
+                            ve güven skoru hesaplama işlemleri tamamen derin öğrenme ile yapılmaktadır.</p>
+                    </div>
+
+                    <!-- Kullanılan Teknolojiler -->
+                    <div class="project-detail-card">
+                        <h3>🛠️ Kullanılan Teknolojiler</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <img src="../public/icons/python.png" alt="Python" />
+                                <span>Python</span>
+                            </div>
+                        </div>
+                        <div class="tech-descriptions">
+                            <p><strong>Python:</strong> Ana programlama dili olarak kullanıldı.</p>
+                            <p><strong>OpenCV:</strong> Kamera bağlantısı, görüntü alma ve gösterme işlemleri için
+                                kullanıldı.</p>
+                            <p><strong>YOLOv5:</strong> Nesne tespiti için kullanılan derin öğrenme modeli.</p>
+                            <p><strong>PyTorch:</strong> YOLOv5 modelinin çalıştırılması için kullanılan framework.</p>
+                            <p><strong>NumPy:</strong> Sayısal hesaplamalar ve veri manipülasyonu için kullanıldı.</p>
+                        </div>
+                    </div>
+
+                    <!-- Geliştirme Süreci -->
+                    <div class="project-detail-card">
+                        <h3>🔄 Geliştirme Süreci</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Model Entegrasyonu</h4>
+                                    <p>YOLOv5 modeli önceden eğitilmiş ağırlıklarla indirildi ve projeye entegre edildi.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Görüntü Alma</h4>
+                                    <p>OpenCV ile bilgisayar kamerası üzerinden görüntü akışı sağlandı.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Gerçek Zamanlı Tahmin</h4>
+                                    <p>Her video karesi modele verildi, tespit edilen nesneler etiketlendi ve bounding
+                                        box'lar çizildi.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Performans Testi</h4>
+                                    <p>Farklı ortamlarda test edilerek modelin FPS ve doğruluk performansı gözlemlendi.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Son Dokunuşlar</h4>
+                                    <p>Arayüz ve kutu renkleri optimize edildi, farklı donanımlarda uyumluluk testleri
+                                        yapıldı.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teknik Detaylar -->
+                    <div class="project-detail-card">
+                        <h3>🔬 Teknik Detaylar</h3>
+                        <ul class="feature-list">
+                            <li>✅ <strong>Model:</strong> YOLOv5s (küçük model, hızlı çalışma)</li>
+                            <li>✅ <strong>Dataset:</strong> COCO (Common Objects in Context) - 82 sınıf</li>
+                            <li>✅ <strong>FPS:</strong> 30+ FPS (gerçek zamanlı performans)</li>
+                            <li>✅ <strong>Doğruluk:</strong> %85+ mAP (mean Average Precision)</li>
+                            <li>✅ <strong>Çözünürlük:</strong> 640x640 piksel (model giriş boyutu)</li>
+                            <li>✅ <strong>Donanım:</strong> CPU ve GPU desteği</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Proje Linkleri -->
+                <div class="project-links">
+                    <a href="https://github.com/mehmetbasgoze/Real-time-Object-Recognition"
+                        class="project-link github-link" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        GitHub'da Görüntüle
+                    </a>
                 </div>
             </div>
         </section>
