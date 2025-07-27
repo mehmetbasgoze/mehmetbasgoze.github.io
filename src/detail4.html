@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../public/icons/favicon.png" />
+
 </head>
 
 <body>
@@ -56,8 +58,10 @@
                 <div class="project-gallery-grid">
                     <div class="gallery-item">
                         <div class="gallery-frame">
-                            <img src="../public/images/projects/result.png" alt="Model Mimarisi"
-                                class="gallery-image" />
+                            <img src="../public/images/projects/cnnGoruntuSiniflandirma/image1.jpg"
+                                alt="Model Çıktıları" class="gallery-image"
+                                data-src="../public/images/projects/cnnGoruntuSiniflandirma/image1.jpg"
+                                data-caption="Model Mimarisi" />
                             <div class="gallery-overlay">
                                 <span class="gallery-caption">Model Mimarisi</span>
                             </div>
@@ -65,28 +69,12 @@
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-frame">
-                            <img src="../public/images/projects/result.png" alt="Eğitim Grafikleri"
-                                class="gallery-image" />
+                            <img src="../public/images/projects/cnnGoruntuSiniflandirma/iamge2.png"
+                                alt="Eğitim Grafikleri" class="gallery-image"
+                                data-src="../public/images/projects/cnnGoruntuSiniflandirma/iamge2.png"
+                                data-caption="Web Arayüzü" />
                             <div class="gallery-overlay">
-                                <span class="gallery-caption">Eğitim Grafikleri</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-frame">
-                            <img src="../public/images/projects/result.png" alt="Sınıflandırma Sonuçları"
-                                class="gallery-image" />
-                            <div class="gallery-overlay">
-                                <span class="gallery-caption">Sınıflandırma Sonuçları</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-frame">
-                            <img src="../public/images/projects/result.png" alt="Doğruluk Analizi"
-                                class="gallery-image" />
-                            <div class="gallery-overlay">
-                                <span class="gallery-caption">Doğruluk Analizi</span>
+                                <span class="gallery-caption">Web Arayüzü</span>
                             </div>
                         </div>
                     </div>
@@ -263,6 +251,15 @@
             </div>
         </section>
     </main>
+
+    <!-- Fullscreen Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modalImage" class="modal-image" src="" alt="" />
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="footer-content">
