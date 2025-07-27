@@ -93,7 +93,9 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <img src="public/icons/favicon.png" alt="Mehmet Başgöze Logo" />
+                <a href="#hero">
+                    <img src="public/icons/favicon.png" alt="Mehmet Başgöze Logo" />
+                </a>
             </div>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#about" class="nav-link">Hakkımda</a></li>
@@ -102,7 +104,7 @@
                 <li><a href="#technologies" class="nav-link">Teknolojiler</a></li>
                 <li><a href="#projects" class="nav-link">Projeler</a></li>
                 <li><a href="#achievements" class="nav-link">Başarılar</a></li>
-                <li><a href="#contact" class="nav-link">İletişim</a></li>
+                <li><a href="#contact" class="nav-link">Sosyal Medya</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menü">
                 <span></span>
@@ -386,7 +388,7 @@
         </div>
 
         <!-- Sosyal Medya Bölümü -->
-        <section id="social" class="section social-section">
+        <section id="contact" class="section social-section">
             <h2>Sosyal Medya</h2>
             <div class="social-grid">
                 <a href="https://linkedin.com/in/mehmetbasgoze" target="_blank" class="social-card"
@@ -407,33 +409,6 @@
                     <span>Email</span>
                 </a>
             </div>
-        </section>
-
-        <!-- İletişim Bölümü -->
-        <section id="contact" class="section contact-section">
-            <h2>İletişim</h2>
-            <form id="contactForm" class="contact-form" autocomplete="off">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" required placeholder="Adınız" />
-                    <span class="form-icon"><svg width="20" height="20" fill="none">
-                            <path d="M2 2h16v16H2V2z" stroke="#38bdf8" />
-                        </svg></span>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" required placeholder="E-posta" />
-                    <span class="form-icon"><svg width="20" height="20" fill="none">
-                            <circle cx="10" cy="10" r="8" stroke="#38bdf8" />
-                        </svg></span>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" name="message" required placeholder="Mesajınız"></textarea>
-                    <span class="form-icon"><svg width="20" height="20" fill="none">
-                            <rect x="2" y="2" width="16" height="16" stroke="#38bdf8" />
-                        </svg></span>
-                </div>
-                <button type="submit" class="send-btn">Gönder</button>
-                <div id="form-message" class="form-message"></div>
-            </form>
         </section>
     </main>
 

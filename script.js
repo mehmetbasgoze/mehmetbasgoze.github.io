@@ -121,14 +121,23 @@ document.addEventListener('DOMContentLoaded', function () {
         navLinksItems.forEach(link => {
             link.addEventListener('click', function (e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href').split('#')[1];
-                const target = document.getElementById(targetId);
-                if (target) {
-                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
+                const href = this.getAttribute('href');
+
+                // Check if it's a cross-page link (contains .html)
+                if (href.includes('.html')) {
+                    // Navigate to the page with the anchor
+                    window.location.href = href;
+                } else {
+                    // Same page navigation
+                    const targetId = href.split('#')[1];
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
         });
