@@ -12,17 +12,26 @@
 </head>
 
 <body>
-    <nav class="navbar">
+    <!-- Modern Navbar -->
+    <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <div class="logo">Mehmet Başgöze</div>
-            <ul class="nav-links">
-                <li><a href="index.html#about">Hakkımda</a></li>
-                <li><a href="index.html#education">Eğitim</a></li>
-                <li><a href="index.html#experience">Deneyim</a></li>
-                <li><a href="index.html#technologies">Teknolojiler</a></li>
-                <li><a href="index.html#projects">Projeler</a></li>
-                <li><a href="index.html#contact">İletişim</a></li>
+            <div class="logo">
+                <img src="../public/icons/favicon.png" alt="Mehmet Başgöze Logo" />
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#about" class="nav-link">Hakkımda</a></li>
+                <li><a href="index.html#education" class="nav-link">Eğitim</a></li>
+                <li><a href="index.html#experience" class="nav-link">Deneyim</a></li>
+                <li><a href="index.html#technologies" class="nav-link">Teknolojiler</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projeler</a></li>
+                <li><a href="index.html#achievements" class="nav-link">Başarılar</a></li>
+                <li><a href="index.html#contact" class="nav-link">İletişim</a></li>
             </ul>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
     <main>
@@ -60,6 +69,7 @@
         </section>
     </main>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
