@@ -2444,3 +2444,24 @@ main {
         margin-top: 0.5rem;
     }
 }
+
+/* Başlık ve Tarihi kapsayan kutu */
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* H3'ün kendi varsayılan boşluğunu sıfırlamak gerekebilir */
+.education-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Tarih kısmının stili */
+.education-header .date {
+    font-weight: bold;
+    color: #07a9e4;
+    white-space: nowrap;
+}
